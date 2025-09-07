@@ -1,0 +1,145 @@
+/*
+  This CSS file is updated to fix the profile picture's positioning on desktop.
+*/
+
+.profile-header-container {
+  background-color: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cover-photo-container {
+  position: relative;
+  width: 100%;
+}
+
+.cover-photo {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  object-fit: cover;
+  margin-top: -60px; /* Pulls the profile picture up */
+  z-index: 1;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.friends-count {
+  font-size: 1rem;
+  color: #65676b;
+  margin-top: 0;
+}
+
+.profile-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.profile-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.primary-button {
+  background-color: #1877f2;
+  color: #fff;
+}
+
+.primary-button:hover {
+  background-color: #166fe5;
+}
+
+.secondary-button {
+  background-color: #e4e6eb;
+  color: #1c1e21;
+}
+
+.secondary-button:hover {
+  background-color: #d8dade;
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* --- Media Queries for Desktop and Tablet --- */
+@media (min-width: 768px) {
+  .cover-photo {
+    height: 300px; /* Larger cover photo on desktop */
+  }
+
+  .profile-details {
+    flex-direction: row; /* Arranges items in a row */
+    align-items: flex-end;
+    padding-left: 2rem;
+    padding-bottom: 1.5rem;
+    position: relative; /* Allows for absolute positioning of the profile pic */
+  }
+
+  .profile-pic {
+    width: 160px;
+    height: 160px;
+    position: absolute; /* Positions the profile pic relative to the parent */
+    top: -80px;
+    left: 24px;
+    border: 6px solid #fff;
+  }
+
+  .profile-info {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 0;
+    margin-left: 200px; /* Shifts info to the right to make space for the profile pic */
+  }
+
+  .profile-name {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+  .friends-count {
+    font-size: 1.125rem;
+  }
+
+  .profile-buttons {
+    margin-left: auto; /* Pushes buttons to the right */
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,98 @@
+/* src/styles/Friends.css */
+.friends-card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.friends-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.friends-title {
+  font-size: 1.25rem; /* 20px */
+  font-weight: 700;
+  margin: 0;
+  color: #050505;
+}
+
+.friends-count {
+  font-size: 0.9375rem; /* 15px */
+  color: #65676b;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+/* "See All Friends" button like FB */
+.friends-action {
+  font-size: 0.9375rem; /* ~15px */
+  font-weight: 600;
+  color: #1877f2;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.friends-action:hover {
+  text-decoration: underline;
+}
+
+/* Friends grid layout */
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.friend-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.friend-item:hover {
+  transform: scale(1.03);
+}
+
+.friend-pic {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.friend-name {
+  font-size: 0.9375rem; /* 15px */
+  font-weight: 500;
+  margin-top: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  color: #050505;
+}
+
+/* Responsive for larger screens */
+@media (min-width: 768px) {
+  .friends-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+  }
+
+  .friends-title {
+    font-size: 1.375rem; /* 22px */
+  }
+
+  .friend-name {
+    font-size: 1rem; /* 16px */
+  }
+}
